@@ -61,7 +61,13 @@ uint8_t TxData[8];
 /* USER CODE BEGIN 0 */
 
 /* USER CODE END 0 */
-
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+  if(GPIO_Pin == GPIO_PIN_13)
+  {
+    HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
+  }
+}
 /**
   * @brief  The application entry point.
   * @retval int
